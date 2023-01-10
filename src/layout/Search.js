@@ -22,9 +22,13 @@ function Search() {
     return response;
   };
 
-  const { data, isLoading, refetch, isError} = useQuery(["name", Name], fechByname, {
-    enabled: false,
-  });
+  const { data, isLoading, refetch, isError } = useQuery(
+    ["name", Name],
+    fechByname,
+    {
+      enabled: false,
+    }
+  );
 
   useEffect(() => {
     if (Page === 1) {
@@ -39,19 +43,19 @@ function Search() {
   };
 
   const handleLocation = () => {
-    setPage(1)
+    setPage(1);
     setFilter(`location`);
     setQuerys(`name=`);
   };
 
   const handelCharacter = () => {
-    setPage(1)
+    setPage(1);
     setFilter(`character`);
     setQuerys(`name=`);
   };
 
   const handelStatus = () => {
-    setPage(1)
+    setPage(1);
     setFilter(`character`);
     setQuerys(`status=`);
   };
@@ -88,13 +92,10 @@ function Search() {
 
                 <ul className="dropdown-menu dropdown-menu-end">
                   <li>
-                    <button
-                      className="dropdown-item"
-                      disabled={true}
-                      type="button"
-                    >
-                      Filter Settings
-                    </button>
+                    <li>
+                      <h6 className="dropdown-header">Filter Settings</h6>
+                    </li>
+
                     <button
                       onClick={(e) => {
                         handleLocation();
@@ -165,10 +166,7 @@ function Search() {
 
                   <div className="mt-4 mb-5 position-relative">
                     <button
-                      disabled={
-                        data.data.info.count === 1 ||
-                        1 === Page
-                      }
+                      disabled={data.data.info.count === 1 || 1 === Page}
                       onClick={() => {
                         setPage(Page - 1);
                       }}
