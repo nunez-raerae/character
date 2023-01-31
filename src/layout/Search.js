@@ -147,8 +147,7 @@ function Search() {
                   <div style={{ marginTop: "-15px" }} className="list-group">
                     {data.data.results.map((val) => (
                       <>
-                        <a
-                          href="#"
+                        <button
                           className="list-group-item list-group-item-action"
                           aria-current="true"
                         >
@@ -159,7 +158,7 @@ function Search() {
                             <h5 className="mb-1">{val.name}</h5>
                             <small>{val.created}</small>
                           </div>
-                        </a>
+                        </button>
                       </>
                     ))}{" "}
                   </div>
@@ -170,7 +169,7 @@ function Search() {
                       onClick={() => {
                         setPage(Page - 1);
                       }}
-                      class="bi btn btn-primary bi-arrow-bar-left position-absolute top-50 start-0 translate-middle-y"
+                      className="bi btn btn-primary bi-arrow-bar-left position-absolute top-50 start-0 translate-middle-y"
                     ></button>
                     <span className="badge text-bg-warning position-absolute top-50 start-50 translate-middle">
                       {Page}
@@ -183,7 +182,7 @@ function Search() {
                       onClick={() => {
                         setPage(Page + 1);
                       }}
-                      class="bi btn-primary btn bi-arrow-bar-right position-absolute top-50 end-0 translate-middle-y"
+                      className="bi btn-primary btn bi-arrow-bar-right position-absolute top-50 end-0 translate-middle-y"
                     ></button>
                   </div>
                 </>
